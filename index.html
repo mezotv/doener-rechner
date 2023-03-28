@@ -47,7 +47,12 @@
         input.addEventListener("input", function(){
             const value = input.value;
             const price = value / 5.5;
-            document.getElementById("anzahldöner").innerHTML = `Mit ${value}€ kannst du dir ${price.toFixed()} Döner kaufen!`
+
+            if (value >= 5.5) {
+                document.getElementById("anzahldöner").innerHTML = `Mit ${value}€ kannst du dir ${price.toFixed()} Döner kaufen!`
+            } else {
+                document.getElementById("anzahldöner").innerHTML = `Mit ${value}€ kannst du dir keinen Döner kaufen!`
+            }
         })
     </script>
 </body>
