@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Döner Rechner</title>
+    <style >
+        body{
+            background-color: #121212;
+            color: #fff;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+        body{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        input{
+            width: 300px;
+            height: 50px;
+            border: none;
+            border-radius: 15px;
+            background-color: #fff;
+        }
+        input::placeholder{
+            color: #000;
+            text-align: center;
+        }
+               
+        input:focus{
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Döner Rechner</h1>
+    <input type="number" id="dönerinput" placeholder="Geld in Euro">
+    <p id="anzahldöner">Gib einen betrag an um den Döner Preis zu sehen</p>
+
+    <script> 
+        const input = document.getElementById("dönerinput");
+        console.log(input)
+        input.addEventListener("input", function(){
+            const value = input.value;
+            const price = value / 5.5;
+            document.getElementById("anzahldöner").innerHTML = `Mit ${value}€ kannst du dir ${price.toFixed()} Döner kaufen!`
+        })
+    </script>
+</body>
+</html>
