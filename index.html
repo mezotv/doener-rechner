@@ -26,6 +26,7 @@
             border: none;
             border-radius: 15px;
             background-color: #fff;
+            text-align: center;
         }
         input::placeholder{
             color: #000;
@@ -46,9 +47,9 @@
         const input = document.getElementById("dönerinput");
         console.log(input)
         input.addEventListener("input", function(){
-            const value = input.value;
-            const price = value / 5.5;
-
+            const value = input.value === "" ? 0 : input.value;
+            const price = Math.floor(value / 5.5);
+            
             if (value >= 5.5) {
                 document.getElementById("anzahldöner").innerHTML = `Mit ${value}€ kannst du dir ${price.toFixed()} Döner kaufen!`
             } else {
@@ -58,3 +59,4 @@
     </script>
 </body>
 </html>
+
